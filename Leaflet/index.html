@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" ng-app="demoapp">
+<head>
+    <title>Hobsons Demo</title>
+    <!--<script src="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.js"></script>-->
+    <script src="Scripts/Leaflet.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
+    <script src="Scripts/angular-leaflet-directive.js"></script>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.1/leaflet.css">
+    <script src="app.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <style>
+        html, body, #map {
+            height: 100%;
+            width: 100%;
+            padding: 0px;
+            margin: 0px;
+            z-index: 0
+        }
+        #landmarkDiv {
+            position: fixed;
+            left: 45%;
+            top: 5%;
+            z-index: 1
+        }
+    </style>
+</head>
+<body ng-controller="DemoController">
+    <div id="landmarkDiv">
+        <a class="btn btn-info" href="#" role="button" ng-click="centerEurope()">Landmark</a>
+        <a class="btn btn-info" href="#" role="button" ng-click="centerNorthAmerica()">Hobsons</a>
+    </div>
+    <leaflet center="center" markers="data.markers" height="100%" width="100%"></leaflet>
+</body>
+
+</html>
+
